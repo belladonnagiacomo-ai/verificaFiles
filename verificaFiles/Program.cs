@@ -44,27 +44,43 @@ namespace verificaFiles
                 sw.WriteLine("ruota,n1,n2,n3,n4,n5");
                 for(int i = 1;  i < ruote.Length; i++)
                 {
-                    sw.WriteLine(ruote[i]);
+                    sw.Write(ruote[i] + ",");
                     for (int z = 0; z < 5; z++)
                     {
                         int random = rand.Next(1, 90);
                         num[z] = random;
-                        sw.Write( num[z] + ",");
+                        sw.Write(  num[z] + "," );
                     }
                     sw.WriteLine();
-                   
+                  
+                }
+            }
+        }
+        static void esercizioB(string file1, string file2)
+        {
+            using (StreamReader sr =  new StreamReader(file2))
+            {
+                string riga = sr.ReadLine();
+                riga = sr.ReadLine();
+                while(riga != null )
+                {
+                    string[] split = riga.Split(',');
+                    for(int i  = 1; i < split.Length; i++)
+                    {
 
-
+                    }
 
                 }
             }
-
         }
         static void Main(string[] args)
         {
             string fileC = "messaggi.csv";
+            string fileB = "giocate_lotto_50.csv";
+            string fileA = "estrazioni.csv";
             EsercizioC(fileC);
             esercizioA();
+            esercizioB(fileB, fileA);
 
         }
     }
