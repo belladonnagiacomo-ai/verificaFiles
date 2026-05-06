@@ -14,7 +14,7 @@ namespace verificaFiles
                 riga = sr.ReadLine();
                 while (riga != null)
                 {
-                    if (riga.Contains("Vinci") == true || riga.Contains("Offerta") == true || riga.Contains("Compra") == true)
+                    if (riga.Contains("Vinci")|| riga.Contains("Offerta") || riga.Contains("Compra"))
                     {
                         lista.Add(riga);
                     }
@@ -33,10 +33,38 @@ namespace verificaFiles
 
             }
         }
+        static void esercizioA()
+        {
+            string[] ruote = ["Bari", "Cagliari", "Firenze", "Genova", "Milano", "Napoli", "Palermo", "Roma", "Torino", "Venezia", "Nazionale"];
+            int[] num = new int[5];
+            Random rand = new Random();
+            using (StreamWriter sw = new StreamWriter("estrazioni.csv"))
+            {
+
+                sw.WriteLine("ruota,n1,n2,n3,n4,n5");
+                for(int i = 1;  i < ruote.Length; i++)
+                {
+                    sw.WriteLine(ruote[i]);
+                    for (int z = 0; z < 5; z++)
+                    {
+                        int random = rand.Next(1, 90);
+                        num[z] = random;
+                        sw.Write( num[z] + ",");
+                    }
+                    sw.WriteLine();
+                   
+
+
+
+                }
+            }
+
+        }
         static void Main(string[] args)
         {
             string fileC = "messaggi.csv";
             EsercizioC(fileC);
+            esercizioA();
 
         }
     }
