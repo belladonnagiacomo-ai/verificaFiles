@@ -72,7 +72,10 @@ namespace verificaFiles
                     ruote.Add(split[1]);
                     numero.Add(split[2]);
 
+                    riga = sr.ReadLine();
+
                 }
+                
             }
         }
         static void Main(string[] args)
