@@ -62,13 +62,15 @@ namespace verificaFiles
             {
                 string riga = sr.ReadLine();
                 riga = sr.ReadLine();
+                List<string> giocatore = new List<string>();
+                List<string> ruote = new List<string>();
+                List<string> numero = new List<string>();
                 while(riga != null )
                 {
                     string[] split = riga.Split(',');
-                    for(int i  = 1; i < split.Length; i++)
-                    {
-
-                    }
+                    giocatore.Add(split[0]);
+                    ruote.Add(split[1]);
+                    numero.Add(split[2]);
 
                 }
             }
